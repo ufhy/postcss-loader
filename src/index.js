@@ -32,7 +32,7 @@ let hasExplicitDependencyOnPostCSS = false;
  * @return {callback} callback Result
  */
 export default async function loader(content, sourceMap, meta) {
-  const options = this.getOptions(schema);
+  const options = Object.assign({}, this);
   const callback = this.async();
   const configOption =
     typeof options.postcssOptions === "undefined" ||
